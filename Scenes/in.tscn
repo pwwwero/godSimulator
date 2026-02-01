@@ -1,18 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://dpkyx23cqpiev"]
+[gd_scene format=3 uid="uid://dpkyx23cqpiev"]
 
 [ext_resource type="Texture2D" uid="uid://cdhoux34ya1as" path="res://Sprites/icon0.png" id="1_lbpnb"]
-[ext_resource type="Script" path="res://Scripts/in.gd" id="1_v3pex"]
+[ext_resource type="Script" uid="uid://bnkwkicsrh33q" path="res://Scripts/in.gd" id="1_v3pex"]
 
-[node name="in" type="Node2D"]
+[node name="in" type="Node2D" unique_id=297218518]
 script = ExtResource("1_v3pex")
 
-[node name="Icon0" type="Sprite2D" parent="."]
+[node name="Icon0" type="Sprite2D" parent="." unique_id=584863313]
 texture_filter = 3
 position = Vector2(316, 327)
 scale = Vector2(4.2, 4.28205)
 texture = ExtResource("1_lbpnb")
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="." unique_id=25692763]
 wait_time = 3.0
 one_shot = true
 autostart = true
