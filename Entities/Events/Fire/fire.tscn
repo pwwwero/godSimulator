@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://cy3g3k2ncvd43"]
+
+[ext_resource type="Script" uid="uid://b2qho45nuf364" path="res://Entities/Events/Fire/fire.gd" id="1_xvvqt"]
+[ext_resource type="Texture2D" uid="uid://bmdrmb8en0mlp" path="res://Entities/Events/Fire/Sprites/fire1.png" id="2_qch8s"]
+[ext_resource type="Texture2D" uid="uid://uutn6nd4ajmk" path="res://Entities/Events/Fire/Sprites/fire2.png" id="3_xv800"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_j6r0u"]
+radius = 23.0217
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yru8p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_qch8s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_xv800")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_umiy5"]
+interpolation_mode = 2
+colors = PackedColorArray(0.486726, 0.486726, 0.486726, 1, 1, 1, 1, 1)
+
+[node name="Fogo" type="Area2D" unique_id=19126748 groups=["fogo"]]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_xvvqt")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1518050001]
+position = Vector2(-7, -7)
+shape = SubResource("CircleShape2D_j6r0u")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1478061025]
+texture_filter = 3
+sprite_frames = SubResource("SpriteFrames_yru8p")
+autoplay = "default"
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="." unique_id=1934027859]
+texture_filter = 3
+position = Vector2(-15, -8)
+sprite_frames = SubResource("SpriteFrames_yru8p")
+autoplay = "default"
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="." unique_id=1062003485]
+texture_filter = 3
+position = Vector2(-3, -16)
+sprite_frames = SubResource("SpriteFrames_yru8p")
+autoplay = "default"
+
+[node name="Timer_espalhar" type="Timer" parent="." unique_id=287982348]
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[node name="Timer_morrer" type="Timer" parent="." unique_id=1449590070]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=877493230]
+modulate = Color(1, 0.52549, 0, 1)
+position = Vector2(-5, -9)
+lifetime = 2.0
+emission_shape = 1
+emission_sphere_radius = 15.0
+gravity = Vector2(0, -25)
+angular_velocity_max = 5.0
+radial_accel_max = 6.0
+damping_max = 10.0
+angle_max = 6.0
+scale_amount_min = 3.0
+scale_amount_max = 6.0
+color = Color(0.988235, 0.266667, 0.305882, 1)
+color_ramp = SubResource("Gradient_umiy5")
+
+[connection signal="timeout" from="Timer_espalhar" to="." method="_on_timer_espalhar_timeout"]
+[connection signal="timeout" from="Timer_morrer" to="." method="_on_timer_morrer_timeout"]

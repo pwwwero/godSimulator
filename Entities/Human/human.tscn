@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://chidj0o4ebbun"]
+
+[ext_resource type="Script" uid="uid://ctui3vbuccdu7" path="res://Entities/Human/human.gd" id="1_pqirf"]
+[ext_resource type="Texture2D" uid="uid://dj1opg5yv7qgg" path="res://Entities/Human/Sprites/human1.png" id="1_rnvww"]
+[ext_resource type="Texture2D" uid="uid://dtejy3kqt0g8a" path="res://Entities/Human/Sprites/human2.png" id="2_i6xip"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_caag1"]
+radius = 4.5
+height = 15.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gma20"]
+radius = 4.5
+height = 16.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oy178"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_rnvww")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_i6xip")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="humao" type="CharacterBody2D"]
+z_index = -99
+scale = Vector2(2, 2)
+script = ExtResource("1_pqirf")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("CapsuleShape2D_caag1")
+
+[node name="Area2D_humano" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D_humano"]
+position = Vector2(0, 1)
+shape = SubResource("CapsuleShape2D_gma20")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 3
+sprite_frames = SubResource("SpriteFrames_oy178")
+autoplay = "default"
+
+[node name="Timer_die" type="Timer" parent="."]
+
+[connection signal="area_entered" from="Area2D_humano" to="." method="_on_area_2d_humano_area_entered"]
+[connection signal="timeout" from="Timer_die" to="." method="_on_timer_die_timeout"]

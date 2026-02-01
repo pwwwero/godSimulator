@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://dfaqah7l0v4tx"]
+
+[ext_resource type="Script" uid="uid://bteby1pvirnth" path="res://Scripts/options.gd" id="1_x3e41"]
+[ext_resource type="FontFile" uid="uid://c4bv2aqqam07a" path="res://Minecraft.ttf" id="2_s7gke"]
+[ext_resource type="AudioStream" uid="uid://l3456uqq6xvy" path="res://Assets/Sounds/kill.wav" id="4_mvfh4"]
+[ext_resource type="AudioStream" uid="uid://d27wm4s3v4vix" path="res://Assets/Sounds/click.wav" id="4_y07l5"]
+
+[node name="Menu" type="Node2D" unique_id=1197995537]
+z_index = 100
+script = ExtResource("1_x3e41")
+
+[node name="Audios" type="Node2D" parent="." unique_id=1396967656]
+
+[node name="Click" type="AudioStreamPlayer" parent="Audios" unique_id=73004962]
+stream = ExtResource("4_y07l5")
+
+[node name="Kill" type="AudioStreamPlayer2D" parent="Audios" unique_id=857448285]
+stream = ExtResource("4_mvfh4")
+
+[node name="Buttons" type="GridContainer" parent="." unique_id=749657343]
+texture_filter = 3
+offset_left = 9.0
+offset_top = 11.0
+offset_right = 240.0
+offset_bottom = 91.0
+columns = 4
+
+[node name="Duck" type="Button" parent="Buttons" unique_id=1812696142]
+texture_filter = 3
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_s7gke")
+text = "duck"
+
+[node name="Pig" type="Button" parent="Buttons" unique_id=1325193103]
+texture_filter = 3
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_s7gke")
+text = "pig"
+
+[node name="Human" type="Button" parent="Buttons" unique_id=31987437]
+texture_filter = 3
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_s7gke")
+text = "human"
+
+[node name="Cow" type="Button" parent="Buttons" unique_id=1441839656]
+texture_filter = 3
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_s7gke")
+text = "cow"
+
+[node name="Lightning" type="Button" parent="Buttons" unique_id=1201033075]
+texture_filter = 3
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_s7gke")
+text = "raio"
+
+[node name="KillAll" type="Button" parent="Buttons" unique_id=847278113]
+texture_filter = 3
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_s7gke")
+text = "matar"
+
+[node name="Sheep" type="Button" parent="Buttons" unique_id=605246432]
+texture_filter = 3
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_s7gke")
+text = "ovelha"
+
+[node name="Fire" type="Button" parent="Buttons" unique_id=2059518218]
+texture_filter = 3
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_s7gke")
+text = "fogo"

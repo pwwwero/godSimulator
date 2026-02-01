@@ -8,16 +8,15 @@
 
 config_version=5
 
+[animation]
+
+compatibility/default_parent_skeleton_in_mesh_instance_3d=true
+
 [application]
 
-config/name="caixa de areia"
-run/main_scene="res://Scenes/in.tscn"
-config/features=PackedStringArray("4.3", "GL Compatibility")
-config/icon="res://icon.svg"
-
-[autoload]
-
-Global="*res://Scripts/Global.gd"
+config/name="god simulator"
+run/main_scene="uid://d0oli6y0si0dm"
+config/features=PackedStringArray("4.6", "GL Compatibility")
 
 [display]
 
@@ -26,6 +25,10 @@ window/size/viewport_height=600
 window/size/resizable=false
 window/stretch/mode="canvas_items"
 window/stretch/aspect="keep_height"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/godot-vim/plugin.cfg")
 
 [layer_names]
 

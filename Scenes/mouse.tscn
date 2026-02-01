@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://qhtuglxkc0ad"]
+[gd_scene format=3 uid="uid://qhtuglxkc0ad"]
 
-[ext_resource type="Script" path="res://Scripts/mouse.gd" id="1_a7hef"]
-[ext_resource type="Texture2D" uid="uid://dse5uvp7rrjuu" path="res://Sprites/HUD/hand.png" id="2_jox0j"]
+[ext_resource type="Script" uid="uid://ceacsmids5i8n" path="res://Scripts/mouse.gd" id="1_a7hef"]
+[ext_resource type="Texture2D" uid="uid://dse5uvp7rrjuu" path="res://Assets/Sprites/HUD/hand.png" id="2_jox0j"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4q65m"]
 
@@ -16,16 +16,16 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Mouse" type="Area2D"]
+[node name="Mouse" type="Area2D" unique_id=2076575405]
 z_index = 101
 position = Vector2(1, 1)
 script = ExtResource("1_a7hef")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=50405059]
 shape = SubResource("CircleShape2D_4q65m")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1188435599]
 texture_filter = 3
 position = Vector2(2, 0)
 scale = Vector2(1.875, 1.75)

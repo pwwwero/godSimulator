@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://by0l632qmiuxk"]
+
+[ext_resource type="Script" uid="uid://4bqib8a2yka0" path="res://Entities/Pig/pig.gd" id="1_7rcdx"]
+[ext_resource type="Texture2D" uid="uid://1t8ct44v8pnm" path="res://Entities/Pig/Sprites/pig1.png" id="2_4q8nd"]
+[ext_resource type="Texture2D" uid="uid://xd1jeepoiddp" path="res://Entities/Pig/Sprites/pig2.png" id="3_5rq82"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tp87e"]
+radius = 8.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_l7hc0"]
+radius = 8.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vjjed"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_4q8nd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_5rq82")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Porco" type="CharacterBody2D" groups=["porco"]]
+script = ExtResource("1_7rcdx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 6)
+shape = SubResource("CircleShape2D_tp87e")
+
+[node name="Area2D_porco" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D_porco"]
+position = Vector2(-1, 6)
+shape = SubResource("CircleShape2D_l7hc0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 3
+sprite_frames = SubResource("SpriteFrames_vjjed")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 4.0
+autostart = true
+
+[node name="Timer_die" type="Timer" parent="."]
+wait_time = 0.7
+one_shot = true
+
+[connection signal="area_entered" from="Area2D_porco" to="." method="_on_area_2d_porco_area_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer_die" to="." method="_on_timer_die_timeout"]
