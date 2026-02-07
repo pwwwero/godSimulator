@@ -1,11 +1,12 @@
 extends Camera2D
 
-var shake_duration = 0.5
-var shake_amplitude = 6.0
-var shake_timer = 0.0
+var shake_duration := 0.9
+var shake_amplitude := 9.0
+var shake_timer := 0.0
 var original_position = Vector2.ZERO
 
 func _ready() -> void:
+	Global.add_mob.connect(shake)
 	Global.kill_all.connect(shake)
 
 func shake():

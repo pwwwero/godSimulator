@@ -24,6 +24,7 @@ metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=50405059]
 shape = SubResource("CircleShape2D_4q65m")
+disabled = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1188435599]
 texture_filter = 3

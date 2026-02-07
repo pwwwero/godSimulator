@@ -17,7 +17,7 @@ func _ready() -> void:
 func _on_add_mob(index: int, position: Vector2 = Vector2.ZERO) -> void:
 	if index >= 0 or index < mobs.size():
 		var new_mob = mobs[index].instantiate()
-		get_parent().add_child(new_mob)
+		get_parent().call_deferred("add_child", new_mob)
 		if position == Vector2.ZERO:
 			new_mob.global_position = Vector2(randf_range(50, 550), randf_range(50, 550))
 		else:

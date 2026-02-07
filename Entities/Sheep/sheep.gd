@@ -29,7 +29,6 @@ func flip():
 
 
 func _on_timer_timeout():
-	randomize()
 	var DIRECTIONx = dirx[randi() % dirx.size()]
 	var DIRECTIONy = diry[randi() % diry.size()]
 	var final_dirx = DIRECTIONx

@@ -4,12 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://1t8ct44v8pnm" path="res://Entities/Pig/Sprites/pig1.png" id="2_4q8nd"]
 [ext_resource type="Texture2D" uid="uid://xd1jeepoiddp" path="res://Entities/Pig/Sprites/pig2.png" id="3_5rq82"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_tp87e"]
-radius = 8.0
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_l7hc0"]
-radius = 8.0
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_vjjed"]
 animations = [{
 "frames": [{
@@ -24,12 +18,22 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_tp87e"]
+radius = 7.071068
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xk0ew"]
+size = Vector2(25, 16)
+
 [sub_resource type="Gradient" id="Gradient_xk0ew"]
 interpolation_mode = 2
 colors = PackedColorArray(0.486726, 0.486726, 0.486726, 1, 1, 1, 1, 1)
 
-[node name="Porco" type="CharacterBody2D" unique_id=485270285 groups=["porco"]]
+[node name="Porco" type="CharacterBody2D" unique_id=485270285 groups=["pigs"]]
 script = ExtResource("1_7rcdx")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=865675646]
+texture_filter = 3
+sprite_frames = SubResource("SpriteFrames_vjjed")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1964035631]
 position = Vector2(-1, 6)
@@ -38,12 +42,8 @@ shape = SubResource("CircleShape2D_tp87e")
 [node name="Area2D_porco" type="Area2D" parent="." unique_id=435631630]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D_porco" unique_id=1938445857]
-position = Vector2(-1, 6)
-shape = SubResource("CircleShape2D_l7hc0")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=865675646]
-texture_filter = 3
-sprite_frames = SubResource("SpriteFrames_vjjed")
+position = Vector2(-0.5, 6)
+shape = SubResource("RectangleShape2D_xk0ew")
 
 [node name="Timer" type="Timer" parent="." unique_id=390996076]
 wait_time = 4.0
