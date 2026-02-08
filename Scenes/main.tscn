@@ -74,6 +74,7 @@ layer_0/tile_data = PackedInt32Array(2293792, 196608, 1, 2228255, 196608, 1, 222
 [node name="Spawner" parent="." unique_id=1802897892 instance=ExtResource("1_261po")]
 
 [node name="Shader" type="ColorRect" parent="." unique_id=655042772]
+visible = false
 z_index = 80
 material = SubResource("ShaderMaterial_6ch47")
 offset_left = -29.0

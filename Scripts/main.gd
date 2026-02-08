@@ -1,5 +1,6 @@
 extends Node2D
 
+
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 
@@ -17,5 +18,8 @@ func _on_sheep_pressed() -> void:
 	Global.add_mob.emit(5)
 func _on_fire_pressed() -> void:
 	Global.add_mob.emit(6)
+	
+###########INDEX (7) -- BABY PIG##################3
 func _on_kill_all_pressed() -> void:
-	Global.add_mob.emit(7)
+	
+	Global.add_mob.emit(8)

@@ -1,9 +1,9 @@
 extends Area2D
 
-@onready var spawn_chance: float = 0.3
-@onready var spread_radius: float = 15.0
+@onready var spawn_chance: float = 0.5
+@onready var spread_radius: float = 25.0
 @onready var fire_amout: int = 2
-@onready var max_time:float = 5.0
+@onready var max_time:float = 7.0
 @onready var min_time:float = 1.0
 
 
