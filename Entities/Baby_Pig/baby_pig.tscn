@@ -3,8 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://pg3ysmyk3n1v" path="res://Entities/Baby_Pig/baby-pig-0001.png" id="1_1dsd4"]
 [ext_resource type="Script" uid="uid://dachqtvgepf5d" path="res://Entities/Baby_Pig/baby_pig.gd" id="1_8tryy"]
 [ext_resource type="Texture2D" uid="uid://b4f123mo8y4xr" path="res://Entities/Baby_Pig/baby-pig-0002.png" id="2_8tryy"]
-[ext_resource type="Texture2D" uid="uid://1t8ct44v8pnm" path="res://Entities/Pig/Sprites/pig1.png" id="2_nkia2"]
-[ext_resource type="Texture2D" uid="uid://xd1jeepoiddp" path="res://Entities/Pig/Sprites/pig2.png" id="3_a55cy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1dffp"]
 size = Vector2(11, 9)
@@ -15,24 +13,13 @@ size = Vector2(11, 9)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_nkia2")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_a55cy")
-}],
-"loop": true,
-"name": &"adult",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
 "texture": ExtResource("1_1dsd4")
 }, {
 "duration": 1.0,
 "texture": ExtResource("2_8tryy")
 }],
 "loop": true,
-"name": &"kid",
+"name": &"default",
 "speed": 5.0
 }]
 
@@ -53,17 +40,14 @@ shape = SubResource("CircleShape2D_nkia2")
 [node name="Baby_Pig_AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=513323041]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_a55cy")
-animation = &"kid"
 
 [node name="Timer" type="Timer" parent="." unique_id=1419441474]
+wait_time = 45.0
+one_shot = true
+autostart = true
 
 [node name="WalkTimer" type="Timer" parent="." unique_id=2110612218]
-
-[node name="Label" type="Label" parent="." unique_id=933430783]
-offset_left = -47.0
-offset_top = -30.0
-offset_right = 56.0
-offset_bottom = -7.0
+autostart = true
 
 [connection signal="area_entered" from="BabyPigArea2D" to="." method="_on_baby_pig_area_2d_area_entered"]
 [connection signal="timeout" from="Timer" to="." method="aging_on_timer_timeout"]
